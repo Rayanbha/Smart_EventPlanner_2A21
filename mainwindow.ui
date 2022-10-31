@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>701</height>
+   </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>CrossCursor</cursorShape>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+alternate-background-color: rgb(255, 255, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 148, 132, 255), stop:1 rgba(255, 255, 255, 255));
+border-color: rgb(255, 255, 255);
+border-color: rgb(85, 255, 0);
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>160</y>
+      <width>361</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
+background-color: rgb(211, 253, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 255, 255, 0), stop:1 rgba(255, 255, 255, 255));
+font: 10pt &quot;Cascadia Code&quot;;</string>
+    </property>
+    <property name="title">
+     <string>Providers Manager</string>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>108</y>
+       <width>111</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string>font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Last name</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>155</y>
+       <width>118</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string>font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Product type</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>202</y>
+       <width>63</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string>font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Adress</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>249</y>
+       <width>164</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string>font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+     </property>
+     <property name="text">
+      <string>Phone number</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_last_name_provider">
+     <property name="geometry">
+      <rect>
+       <x>171</x>
+       <y>112</y>
+       <width>188</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_product_type_provider">
+     <property name="geometry">
+      <rect>
+       <x>171</x>
+       <y>158</y>
+       <width>188</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_adress_provider">
+     <property name="geometry">
+      <rect>
+       <x>171</x>
+       <y>204</y>
+       <width>188</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>1</x>
+       <y>61</y>
+       <width>111</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>First name</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_first_name_provider">
+     <property name="geometry">
+      <rect>
+       <x>171</x>
+       <y>66</y>
+       <width>188</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_phone_provider">
+     <property name="geometry">
+      <rect>
+       <x>171</x>
+       <y>250</y>
+       <width>188</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_10">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>290</y>
+       <width>111</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Price</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>330</y>
+       <width>111</width>
+       <height>19</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Quality</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_price_provider">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>290</y>
+       <width>188</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_quality_provider">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>330</y>
+       <width>188</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(255, 255, 255);</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QTableView" name="tableView_provider">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>160</y>
+      <width>781</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(211, 253, 255);
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(85, 255, 255, 0), stop:1 rgba(255, 255, 255, 255));</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_delete_providert">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>580</y>
+      <width>121</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Delete provider</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_sort_providers">
+    <property name="geometry">
+     <rect>
+      <x>1124</x>
+      <y>90</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Sort</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_name_provider">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>60</y>
+      <width>83</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_type_provider">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>90</y>
+      <width>83</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Type</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioButton_price_provider">
+    <property name="geometry">
+     <rect>
+      <x>1010</x>
+      <y>120</y>
+      <width>83</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Price</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_search_provider">
+    <property name="geometry">
+     <rect>
+      <x>730</x>
+      <y>100</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">selection-color: rgb(255, 255, 255);
+background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>100</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Search provider</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_rapport">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>530</y>
+      <width>201</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Rapport qualite/prix</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_add_provider">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>540</y>
+      <width>101</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Add provider</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_modify_provider">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>540</y>
+      <width>131</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Modify provider</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_location">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>520</y>
+      <width>211</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
+font: 10pt &quot;Cascadia Code&quot;;</string>
+    </property>
+    <property name="text">
+     <string>location of closest provider</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>-10</x>
+      <y>-60</y>
+      <width>2541</width>
+      <height>801</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../Downloads/308115158_802782294263502_5633312276408196674_n.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_id_modify">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>560</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>560</y>
+      <width>31</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="text">
+     <string>Id </string>
+    </property>
+   </widget>
+   <zorder>label_9</zorder>
+   <zorder>groupBox</zorder>
+   <zorder>tableView_provider</zorder>
+   <zorder>pushButton_delete_providert</zorder>
+   <zorder>pushButton_sort_providers</zorder>
+   <zorder>radioButton_name_provider</zorder>
+   <zorder>radioButton_type_provider</zorder>
+   <zorder>radioButton_price_provider</zorder>
+   <zorder>lineEdit_search_provider</zorder>
+   <zorder>label_7</zorder>
+   <zorder>pushButton_rapport</zorder>
+   <zorder>pushButton_add_provider</zorder>
+   <zorder>pushButton_modify_provider</zorder>
+   <zorder>pushButton_location</zorder>
+   <zorder>lineEdit_id_modify</zorder>
+   <zorder>label_5</zorder>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuOMNIS_TEMPUS">
+    <property name="font">
+     <font>
+      <family>Cascadia Code</family>
+     </font>
+    </property>
+    <property name="title">
+     <string>OMNIS TEMPUS</string>
+    </property>
+   </widget>
+   <addaction name="menuOMNIS_TEMPUS"/>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
