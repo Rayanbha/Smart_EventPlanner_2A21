@@ -4,7 +4,7 @@
 #include <QSqlQueryModel>
 #include <QString>
 #include <QDate>
-
+//
 class client
 {
     QString Firstname,Lastname,email,event;
