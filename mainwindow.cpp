@@ -37,7 +37,8 @@ void MainWindow::on_pushButton_ajouter_clicked()
    QString departement=ui->box->currentText();
    QString ID_chef=ui->lineEdit_chef->text();
    int salary=ui->lineEdit_salary->text().toInt();
-
+   if(!ID_emp.isEmpty()&&!first_name.isEmpty()&&!last_name.isEmpty()&&!password.isEmpty()&&!ID_chef.isEmpty())
+   {
    if(ID_emp.length()<11&&ID_emp.length()>5&&first_name.length()<16&&last_name.length()<16&&password.length()<13&&ID_chef.length()<11&&ID_chef.length()>5&&departement.length()<3)
     {
    employee e(ID_emp, departement, first_name, password, last_name, ID_chef, salary);
@@ -46,20 +47,24 @@ void MainWindow::on_pushButton_ajouter_clicked()
      {
          ui->tableView1->setModel(Etmp.afficher());
          ui->tableView2->setModel(Etmp.afficher());
-      QMessageBox::information(nullptr,QObject::tr("OK"),
-                               QObject::tr("Ajout effectué \n"
+      QMessageBox::information(nullptr,QObject::tr("add completed"),
+                               QObject::tr("add completed \n"
                                            "Click Cancel to exit."),QMessageBox::Cancel);
      }
      else
-         QMessageBox::critical(nullptr,QObject::tr("not OK"),
-                               QObject::tr("Ajout non effectué \n"
+         QMessageBox::critical(nullptr,QObject::tr("add not completed"),
+                               QObject::tr("add not completed \n"
                                            "Click Cancel to exit."),QMessageBox::Cancel);
    }
    else
-       QMessageBox::critical(nullptr,QObject::tr("not OK"),
-                             QObject::tr("NON-RESPECT D'UNE CONDITION \n"
+       QMessageBox::critical(nullptr,QObject::tr("add not completed"),
+                             QObject::tr("condition not respected  \n"
                                          "Click Cancel to exit."),QMessageBox::Cancel);
-
+}
+   else
+       QMessageBox::critical(nullptr,QObject::tr("add not completed"),
+                             QObject::tr("must fill all the informations \n"
+                                         "Click Cancel to exit."),QMessageBox::Cancel);
 }
 void MainWindow::on_pushButton_supprimer_clicked()
 {
@@ -71,13 +76,13 @@ void MainWindow::on_pushButton_supprimer_clicked()
 
          ui->tableView1->setModel(Etmp.afficher());
          ui->tableView2->setModel(Etmp.afficher());
-      QMessageBox::information(nullptr,QObject::tr("OK"),
-                               QObject::tr("suppression effectuée \n"
+      QMessageBox::information(nullptr,QObject::tr("delete completed"),
+                               QObject::tr("delete completed \n"
                                            "Click Cancel to exit."),QMessageBox::Cancel);
      }
      else
-         QMessageBox::critical(nullptr,QObject::tr("not OK"),
-                               QObject::tr("suppression non effectuée \n"
+         QMessageBox::critical(nullptr,QObject::tr("delete not completed"),
+                               QObject::tr("delete not completed \n"
                                            "Click Cancel to exit."),QMessageBox::Cancel);
 
 }
@@ -116,6 +121,8 @@ void MainWindow::on_pushButton_modifier_clicked()
     QString ID_chef=ui->lineEdit_chef->text();
     int salary=ui->lineEdit_salary->text().toInt();
     QString res = QString::number(salary);
+    if(!ID_emp.isEmpty()&&!first_name.isEmpty()&&!last_name.isEmpty()&&!password.isEmpty()&&!ID_chef.isEmpty())
+    {
     if(ID_emp.length()<11&&ID_emp.length()>5&&first_name.length()<16&&last_name.length()<16&&password.length()<13&&ID_chef.length()<11&&ID_chef.length()>5)
      {
     employee e1(ID_emp, departement, first_name, password, last_name, ID_chef, salary);
@@ -125,21 +132,25 @@ void MainWindow::on_pushButton_modifier_clicked()
 
           ui->tableView1->setModel(Etmp.afficher());
           ui->tableView2->setModel(Etmp.afficher());
-       QMessageBox::information(nullptr,QObject::tr("OK"),
-                                QObject::tr("modification effectué \n"
+       QMessageBox::information(nullptr,QObject::tr("update completed"),
+                                QObject::tr("update completed \n"
                                             "Click Cancel to exit."),QMessageBox::Cancel);
       }
       else
-          QMessageBox::critical(nullptr,QObject::tr("not OK"),
-                                QObject::tr("modification non effectué \n"
+          QMessageBox::critical(nullptr,QObject::tr("update not completed"),
+                                QObject::tr("update not completed \n"
                                             "Click Cancel to exit."),QMessageBox::Cancel);
     }
     else
-        QMessageBox::critical(nullptr,QObject::tr("not OK"),
-                              QObject::tr("NON-RESPECT D'UNE CONDITION \n"
+        QMessageBox::critical(nullptr,QObject::tr("update not completed"),
+                              QObject::tr("condition not respected \n"
                                           "Click Cancel to exit."),QMessageBox::Cancel);
+    }
+        else
+            QMessageBox::critical(nullptr,QObject::tr("update not completed"),
+                                  QObject::tr("must fill all the informations \n"
+                                              "Click Cancel to exit."),QMessageBox::Cancel);
 }
-
 
 void MainWindow::on_pushButton_reset_clicked()
 {
