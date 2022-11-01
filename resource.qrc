@@ -1,9 +1,0 @@
-<RCC>
-    <qresource prefix="/image">
-        <file>image/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg</file>
-        <file>image/vintage-grunge-blue-concrete-texture-wall-background-with-vignette (1).jpg</file>
-        <file>image/blue_smooth_wavy_background.jpg</file>
-        <file>image/cool-background.png</file>
-        <file>image/logo.png</file>
-    </qresource>
-</RCC>
