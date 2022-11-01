@@ -16,6 +16,18 @@ MainWindow::MainWindow(QWidget *parent):
 
 
     ui->tableView->setModel(Etmp.afficher());
+
+        QRegularExpression rx("^[A-Za-z]+$");
+
+        QValidator *validator = new QRegularExpressionValidator(rx, this);
+        ui->lineEdit_FirstName->setValidator(validator);
+        ui->lineEdit_LastName->setValidator(validator);
+
+
+
+            QValidator *validator_CIN= new QIntValidator(00000001, 99999999, this);
+
+            ui->lineEdit_CIN->setValidator(validator_CIN);
 }
 
 MainWindow::~MainWindow()
