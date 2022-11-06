@@ -33,6 +33,7 @@ public:
     QSqlQueryModel * afficher();
     bool supprimer(QString);
     bool modifier(QString ID_emp);
+    QSqlQueryModel * search(QString ID_emp);
 
 };
 

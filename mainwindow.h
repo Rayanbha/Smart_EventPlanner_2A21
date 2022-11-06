@@ -22,6 +22,7 @@ private slots:
     void on_pushButton_modifier_clicked();
     void on_tableView1_activated(const QModelIndex &index);
     void on_pushButton_reset_clicked();
+    void on_pushButton_search_clicked();
 
 
 private:

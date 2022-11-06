@@ -162,3 +162,11 @@ void MainWindow::on_pushButton_reset_clicked()
     ui->lineEdit_salary->setText(nullptr);
     ui->lineEdit_chef->setText("211JMT");
 }
+
+void MainWindow::on_pushButton_search_clicked()
+{
+    QString ID_emp = ui->lineEdit_search->text();
+            ui->tableView1->setModel(Etmp.search(ID_emp));
+
+}
+

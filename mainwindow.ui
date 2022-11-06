@@ -24,11 +24,11 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="RH_manager">
      <attribute name="title">
-      <string/>
+      <string>RH_manager</string>
      </attribute>
      <widget class="QGroupBox" name="groupBox">
       <property name="geometry">
@@ -136,7 +136,7 @@
         <string/>
        </property>
        <property name="maxLength">
-        <number>39000</number>
+        <number>15</number>
        </property>
        <property name="placeholderText">
         <string>entre 1 et 15 lettres</string>
@@ -150,6 +150,9 @@
          <width>171</width>
          <height>22</height>
         </rect>
+       </property>
+       <property name="maxLength">
+        <number>15</number>
        </property>
        <property name="placeholderText">
         <string>entre 1 et 15 lettres</string>
@@ -166,6 +169,9 @@
        </property>
        <property name="text">
         <string>211JMT</string>
+       </property>
+       <property name="maxLength">
+        <number>10</number>
        </property>
        <property name="placeholderText">
         <string>211JMT....</string>
@@ -287,6 +293,9 @@
        <property name="text">
         <string>211JMT</string>
        </property>
+       <property name="maxLength">
+        <number>10</number>
+       </property>
        <property name="placeholderText">
         <string>211JMT...</string>
        </property>
@@ -355,7 +364,7 @@
         <x>430</x>
         <y>50</y>
         <width>451</width>
-        <height>431</height>
+        <height>221</height>
        </rect>
       </property>
      </widget>
@@ -372,13 +381,50 @@
        <string/>
       </property>
      </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>290</y>
+        <width>451</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>search</string>
+      </property>
+      <widget class="QLineEdit" name="lineEdit_search">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>40</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_search">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>40</y>
+         <width>121</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>search</string>
+       </property>
+      </widget>
+     </widget>
      <zorder>label_pic</zorder>
      <zorder>groupBox</zorder>
      <zorder>tableView1</zorder>
+     <zorder>groupBox_3</zorder>
     </widget>
     <widget class="QWidget" name="RH_employees">
      <attribute name="title">
-      <string/>
+      <string>Employee</string>
      </attribute>
      <widget class="QLabel" name="label_pic2">
       <property name="geometry">
@@ -407,7 +453,7 @@
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>70</y>
+        <y>60</y>
         <width>261</width>
         <height>391</height>
        </rect>
@@ -415,29 +461,6 @@
       <property name="title">
        <string>controle</string>
       </property>
-      <widget class="QPushButton" name="pushButton_6">
-       <property name="geometry">
-        <rect>
-         <x>90</x>
-         <y>90</y>
-         <width>81</width>
-         <height>28</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>search</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_7">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>40</y>
-         <width>241</width>
-         <height>31</height>
-        </rect>
-       </property>
-      </widget>
       <widget class="QPushButton" name="pushButton_7">
        <property name="geometry">
         <rect>
@@ -455,7 +478,7 @@
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>200</y>
+         <y>110</y>
          <width>131</width>
          <height>28</height>
         </rect>
@@ -468,7 +491,7 @@
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>160</y>
+         <y>50</y>
          <width>97</width>
          <height>20</height>
         </rect>
@@ -481,7 +504,7 @@
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>200</y>
+         <y>110</y>
          <width>97</width>
          <height>20</height>
         </rect>
@@ -494,7 +517,7 @@
        <property name="geometry">
         <rect>
          <x>150</x>
-         <y>240</y>
+         <y>170</y>
          <width>97</width>
          <height>20</height>
         </rect>
