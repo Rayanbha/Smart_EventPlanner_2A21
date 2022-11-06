@@ -27,6 +27,16 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_pushButton_2_clicked();
+
+    void on_Search_clicked();
+
+    void on_search_clicked();
+
+    void on_Sort_clicked();
+
+    void on_sort_clicked();
+
 private:
     Ui::MainWindow *ui;
     client Etmp;

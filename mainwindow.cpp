@@ -6,6 +6,7 @@
 #include<string>
 #include<iostream>
 #include<QComboBox>
+#include<QRadioButton>
 
 MainWindow::MainWindow(QWidget *parent):
      QMainWindow(parent),
@@ -16,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent):
 
 
     ui->tableView->setModel(Etmp.afficher());
+    ui->tableView_2->setModel(Etmp.afficher());
+
 
         QRegularExpression rx("^[A-Za-z]+$");
 
@@ -143,4 +146,31 @@ void MainWindow::on_pushButton_clicked()
     ui->lineEdit_CIN->setText(nullptr);
     ui->lineEdit_Email->setText(nullptr);
     ui->event->setCurrentText("Event");
+     ui->tableView->setModel(Etmp.afficher());
+}
+
+
+void MainWindow::on_search_clicked()
+{ QString cin=ui->lineEdit_CIN->text();
+    ui->tableView->setModel(Etmp.search(cin));
+
+}
+
+
+void MainWindow::on_sort_clicked()
+{
+   if(ui->radioButton_CIN->isChecked())
+   {
+    ui->tableView_2->setModel(Etmp.sort_CIN());
+   }
+   else if(ui->radioButton_lastname->isChecked())
+   {
+ui->tableView_2->setModel(Etmp.sort_LastN());
+
+    }
+   else if(ui->radioButton_firstname->isChecked())
+   {
+       ui->tableView_2->setModel(Etmp.sort_FirstN());
+   }
+
 }

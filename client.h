@@ -40,7 +40,19 @@ public:
    bool ajouter();
   bool supprimer(int);
   bool update();
+
+  //affichage
  QSqlQueryModel * afficher();
+ QSqlQueryModel  *search(const QString &cin);
+
+
+ //trier
+ QSqlQueryModel *sort_CIN();
+ QSqlQueryModel *sort_FirstN();
+ QSqlQueryModel *sort_LastN();
+
+
+ float stats();
 
 };
 

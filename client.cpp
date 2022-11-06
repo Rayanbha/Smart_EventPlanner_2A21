@@ -87,8 +87,7 @@ bool client::update()
     QString y=QString::number(year);
 
 
- //   query.prepare("update client set Firstname='"+Firstname+"',Lastname='"+Lastname+"',birthday='"+birthday+"',CIN='"+CIN+"',email='"+email+"',event='"+event+"' where CIN='"+CIN+"'");
-    query.prepare("UPDATE client set  Firstname=:FirstName,Lastname=:LastName,day=:day,month=:month,year=:year,CIN=:CIN,email=:email,event=:event WHERE CIN=:CIN ");
+     query.prepare("UPDATE client set  Firstname=:FirstName,Lastname=:LastName,day=:day,month=:month,year=:year,CIN=:CIN,email=:email,event=:event WHERE CIN=:CIN");
 
 
 
@@ -105,3 +104,74 @@ bool client::update()
 
 
 }
+
+QSqlQueryModel  *client::search(const QString  &cin)
+{
+    QSqlQueryModel * model=new QSqlQueryModel();
+
+    model->setQuery("select * from client where(CIN like '"+cin+"')");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("First Name"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("Last Name"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("Day"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("Month"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("Year"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("CIN"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("Email"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("Event"));
+
+    return model;
+
+}
+QSqlQueryModel *client::sort_CIN()
+{
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from client order by CIN");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("First Name"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("Last Name"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("Day"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("Month"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("Year"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("CIN"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("Email"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("Event"));
+
+    return model;
+
+}
+
+
+QSqlQueryModel *client::sort_FirstN()
+{
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from client order by Firstname");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("First Name"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("Last Name"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("Day"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("Month"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("Year"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("CIN"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("Email"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("Event"));
+
+    return model;
+
+}
+
+QSqlQueryModel *client::sort_LastN()
+{
+
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from client order by Lastname");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("First Name"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("Last Name"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("Day"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("Month"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("Year"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("CIN"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("Email"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("Event"));
+
+    return model;
+
+}
+

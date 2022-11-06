@@ -2,8 +2,18 @@
 #include <QApplication>
 #include <QMessageBox>
 #include "connection.h"
+#include<QtCharts/QPieSeries>
+#include<QtCharts/QPieSlice>
+#include<QtCharts/QChartView>
+
+
+QT_CHARTS_USE_NAMESPACE
+
 int main(int argc, char *argv[])
 {
+    QPieSeries *series= new QPieSeries();
+    series->append("")
+
     QApplication a(argc, argv);
 
     Connection c;
