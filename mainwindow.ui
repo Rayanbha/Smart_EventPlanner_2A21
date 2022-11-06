@@ -391,7 +391,7 @@
        </rect>
       </property>
       <property name="title">
-       <string>search</string>
+       <string>search and sort</string>
       </property>
       <widget class="QLineEdit" name="lineEdit_search">
        <property name="geometry">
@@ -416,11 +416,77 @@
         <string>search</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="pushButton_sort">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>130</y>
+         <width>131</width>
+         <height>28</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>sort</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_first">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>90</y>
+         <width>97</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>first name</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_last">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>130</y>
+         <width>97</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>last name</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton_salary">
+       <property name="geometry">
+        <rect>
+         <x>190</x>
+         <y>170</y>
+         <width>97</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>salary</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="pushButton_export">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>10</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export</string>
+      </property>
      </widget>
      <zorder>label_pic</zorder>
      <zorder>groupBox</zorder>
      <zorder>tableView1</zorder>
      <zorder>groupBox_3</zorder>
+     <zorder>pushButton_export</zorder>
     </widget>
     <widget class="QWidget" name="RH_employees">
      <attribute name="title">
@@ -474,71 +540,6 @@
         <string>send message</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_8">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>110</y>
-         <width>131</width>
-         <height>28</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>sort</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="radioButton">
-       <property name="geometry">
-        <rect>
-         <x>150</x>
-         <y>50</y>
-         <width>97</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>first name</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="radioButton_2">
-       <property name="geometry">
-        <rect>
-         <x>150</x>
-         <y>110</y>
-         <width>97</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>last name</string>
-       </property>
-      </widget>
-      <widget class="QRadioButton" name="radioButton_3">
-       <property name="geometry">
-        <rect>
-         <x>150</x>
-         <y>170</y>
-         <width>97</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>salary</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QPushButton" name="pushButton_5">
-      <property name="geometry">
-       <rect>
-        <x>790</x>
-        <y>10</y>
-        <width>93</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Export</string>
-      </property>
      </widget>
     </widget>
    </widget>

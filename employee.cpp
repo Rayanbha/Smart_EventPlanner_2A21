@@ -74,4 +74,53 @@ QSqlQueryModel * employee::search(QString ID_emp)
  model->setHeaderData(6,Qt::Horizontal,QObject::tr("ID chef"));
  return model;
 }
+QSqlQueryModel * employee::sort_Lastn()
+{
+
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from employee order by Last_name");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID emp"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("departement"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("first name"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("password"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("last name"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("salary"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("ID chef"));
+
+    return model;
+
+}
+QSqlQueryModel * employee::sort_firstn()
+{
+
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from employee order by first_name");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID emp"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("departement"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("first name"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("password"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("last name"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("salary"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("ID chef"));
+
+    return model;
+
+}
+QSqlQueryModel * employee::sort_salary()
+{
+
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from employee order by salary");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID emp"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("departement"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("first name"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("password"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("last name"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("salary"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("ID chef"));
+
+    return model;
+
+}
+
 

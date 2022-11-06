@@ -34,7 +34,9 @@ public:
     bool supprimer(QString);
     bool modifier(QString ID_emp);
     QSqlQueryModel * search(QString ID_emp);
-
+    QSqlQueryModel * sort_Lastn();
+    QSqlQueryModel * sort_firstn();
+    QSqlQueryModel * sort_salary();
 };
 
 #endif // EMPLOYEE_H

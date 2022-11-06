@@ -23,6 +23,7 @@ private slots:
     void on_tableView1_activated(const QModelIndex &index);
     void on_pushButton_reset_clicked();
     void on_pushButton_search_clicked();
+    void on_pushButton_sort_clicked();
 
 
 private:

@@ -169,4 +169,19 @@ void MainWindow::on_pushButton_search_clicked()
             ui->tableView1->setModel(Etmp.search(ID_emp));
 
 }
+void MainWindow::on_pushButton_sort_clicked()
+{
+    if (ui->radioButton_first->isChecked())
+    {
+       ui->tableView1->setModel(Etmp.sort_firstn());
+    }
+    else if(ui->radioButton_last->isChecked())
+    {
+       ui->tableView1->setModel(Etmp.sort_Lastn());
+    }
+    else if(ui->radioButton_salary->isChecked())
+    {
+       ui->tableView1->setModel(Etmp.sort_salary());
+    }
+}
 
