@@ -23,6 +23,17 @@ private slots:
     void on_pushButton_delete_event_clicked();
      void on_pushButton_modify_event_clicked();
 
+     void on_tableView_event_activated(const QModelIndex &index);
+
+
+     void on_bt_search_clicked();
+
+     void on_TRI_NAME_clicked();
+
+     void on_TRI_DATE_clicked();
+
+     void on_TRI_TYPE_clicked();
+
 private:
     Ui::MainWindow *ui;
     Events etmp ;

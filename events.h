@@ -26,6 +26,10 @@ public:
         bool ajouter();
           bool supprimer(QString) ;
          bool modifier(int id_event );
+         QSqlQueryModel *tri_date();
+         QSqlQueryModel* tri_type();
+         QSqlQueryModel * recherche(int id);
+         QSqlQueryModel* tri_id();
 };
 
 #endif // EVENTS_H

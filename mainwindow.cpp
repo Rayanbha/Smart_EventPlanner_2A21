@@ -20,12 +20,15 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lineEdit_name_event->setValidator(validator);
     ui->lineEdit_type_event->setValidator(validator);
     ui->lineEdit_clientevent->setValidator(validator);
+   // ui->tabWidget_event->setCurrentIndex(0);
+     ui->tableView_event->setModel(etmp.afficher());
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
 
 
 void MainWindow::on_pushButton_add_event_clicked()
@@ -116,4 +119,59 @@ void MainWindow::on_pushButton_modify_event_clicked()
                                                "click cancel to exit."),QMessageBox::Cancel);
 
           }
+}
+
+void MainWindow::on_tableView_event_activated(const QModelIndex &index)
+{
+    QString val=ui->tableView_event->model()->data(index).toString();
+
+                QSqlQuery query;
+
+                query.prepare("select * from EVENT where id_emp='"+val+"');//"+val+"'or event_name='"+val+"' or event_type='"+val+"' or client='"+val+"' or date='"+val+"' or cost='"+val+"' or guest='"+val+"' ");
+
+                if(query.exec())
+                {
+                    while(query.next())
+                    {
+
+                         ui->lineEdit_idemp_event->setText(query.value(1).toString());
+                        ui->dateEdit_event->setDate(query.value(2).toDate());
+                         ui->lineEdit_name_event->setText(query.value(3).toString());
+                         ui->lineEdit_type_event->setText(query.value(4).toString());
+                         ui->lineEdit_cost_event->setText(query.value(5).toString());
+                         ui->lineEdit_number_event->setText(query.value(6).toString());
+
+
+
+                    }
+                }
+}
+
+
+
+void MainWindow::on_bt_search_clicked()
+{
+    int id_event=ui->search_event->text().toInt();
+                if (id_event==0) {
+                    QMessageBox::information(this, tr("Empty Field"),
+                        tr("Please enter a Number."));
+                    return;
+                } else {
+                ui->tableView_event->setModel(etmp .recherche(id_event));
+                }
+}
+
+void MainWindow::on_TRI_NAME_clicked()
+{
+     ui->tableView_event->setModel(etmp.tri_id());
+}
+
+void MainWindow::on_TRI_DATE_clicked()
+{
+    ui->tableView_event->setModel(etmp.tri_date());
+}
+
+void MainWindow::on_TRI_TYPE_clicked()
+{
+    ui->tableView_event->setModel(etmp.tri_type());
 }

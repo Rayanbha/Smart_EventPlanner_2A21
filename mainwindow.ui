@@ -312,79 +312,11 @@ font: 10pt &quot;Cascadia Code&quot;;</string>
      <string>Delete event</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_sort_events">
+   <widget class="QLineEdit" name="search_event">
     <property name="geometry">
      <rect>
-      <x>1070</x>
-      <y>80</y>
-      <width>91</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
-font: 10pt &quot;Cascadia Code&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Sort</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_name_event">
-    <property name="geometry">
-     <rect>
-      <x>970</x>
-      <y>60</y>
-      <width>83</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
-font: 10pt &quot;Cascadia Code&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Name</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_type_event">
-    <property name="geometry">
-     <rect>
-      <x>970</x>
-      <y>90</y>
-      <width>83</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
-font: 10pt &quot;Cascadia Code&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Type</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_date_event">
-    <property name="geometry">
-     <rect>
-      <x>970</x>
-      <y>120</y>
-      <width>83</width>
-      <height>18</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Cascadia Code&quot;;
-font: 10pt &quot;Cascadia Code&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Date</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="lineEdit_search_event">
-    <property name="geometry">
-     <rect>
-      <x>50</x>
-      <y>90</y>
+      <x>40</x>
+      <y>40</y>
       <width>113</width>
       <height>20</height>
      </rect>
@@ -398,7 +330,7 @@ background-color: rgb(255, 255, 255);</string>
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>40</y>
+      <y>10</y>
       <width>101</width>
       <height>20</height>
      </rect>
@@ -530,6 +462,74 @@ font: 10pt &quot;Cascadia Code&quot;;</string>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="bt_search">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>80</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>search</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="TRI_NAME">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>60</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>ID</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="TRI_TYPE">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>90</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TYPE</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="TRI_DATE">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>120</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>DATE</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>790</x>
+      <y>90</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string>      Sort</string>
     </property>
    </widget>
   </widget>

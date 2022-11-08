@@ -76,3 +76,70 @@ Events::Events()
          return query.exec();
      }
 
+
+     QSqlQueryModel * Events::recherche(int id)
+     {
+         QString res=QString ::number(id);
+
+         QSqlQueryModel *model=new QSqlQueryModel();
+         model->setQuery("SELECT * FROM EVENT WHERE ID_EVENT ='"+res+"'");
+         model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID event"));
+         model->setHeaderData(1, Qt::Horizontal, QObject::tr("Event name"));
+          model->setHeaderData(2,Qt::Horizontal,QObject::tr("Date"));
+         model->setHeaderData(3, Qt::Horizontal, QObject::tr("Event type"));
+         model->setHeaderData(4, Qt::Horizontal, QObject::tr("Client id"));
+         model->setHeaderData(5, Qt::Horizontal, QObject::tr("Cost"));
+         model->setHeaderData(6, Qt::Horizontal, QObject::tr("Guest number"));
+         model->setHeaderData(7, Qt::Horizontal, QObject::tr("Reduction"));
+          model->setHeaderData(8,Qt::Horizontal,QObject::tr("Id employe"));
+
+         return model;
+     }
+     QSqlQueryModel* Events::tri_id()
+     {
+         QSqlQueryModel *model=new QSqlQueryModel();
+                 model->setQuery("select * from EVENT order by ID_EVENT");
+                 model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID event"));
+                 model->setHeaderData(1, Qt::Horizontal, QObject::tr("Event name"));
+                  model->setHeaderData(2,Qt::Horizontal,QObject::tr("Date"));
+                 model->setHeaderData(3, Qt::Horizontal, QObject::tr("Event type"));
+                 model->setHeaderData(4, Qt::Horizontal, QObject::tr("Client id"));
+                 model->setHeaderData(5, Qt::Horizontal, QObject::tr("Cost"));
+                 model->setHeaderData(6, Qt::Horizontal, QObject::tr("Guest number"));
+                 model->setHeaderData(7, Qt::Horizontal, QObject::tr("Reduction"));
+                  model->setHeaderData(8,Qt::Horizontal,QObject::tr("Id employe"));
+        return model;
+     }
+
+
+      QSqlQueryModel *Events::tri_date()
+      {
+          QSqlQueryModel *model=new QSqlQueryModel();
+                  model->setQuery("select * from EVENT order by EVENT_DATE");
+                  model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID event"));
+                  model->setHeaderData(1, Qt::Horizontal, QObject::tr("Event name"));
+                   model->setHeaderData(2,Qt::Horizontal,QObject::tr("Date"));
+                  model->setHeaderData(3, Qt::Horizontal, QObject::tr("Event type"));
+                  model->setHeaderData(4, Qt::Horizontal, QObject::tr("Client id"));
+                  model->setHeaderData(5, Qt::Horizontal, QObject::tr("Cost"));
+                  model->setHeaderData(6, Qt::Horizontal, QObject::tr("Guest number"));
+                  model->setHeaderData(7, Qt::Horizontal, QObject::tr("Reduction"));
+                   model->setHeaderData(8,Qt::Horizontal,QObject::tr("Id employe"));
+         return model;
+          }
+
+      QSqlQueryModel *Events::tri_type()
+      {
+          QSqlQueryModel *model=new QSqlQueryModel();
+                  model->setQuery("select * from EVENT order by EVENT_TYPE");
+                  model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID event"));
+                  model->setHeaderData(1, Qt::Horizontal, QObject::tr("Event name"));
+                   model->setHeaderData(2,Qt::Horizontal,QObject::tr("Date"));
+                  model->setHeaderData(3, Qt::Horizontal, QObject::tr("Event type"));
+                  model->setHeaderData(4, Qt::Horizontal, QObject::tr("Client id"));
+                  model->setHeaderData(5, Qt::Horizontal, QObject::tr("Cost"));
+                  model->setHeaderData(6, Qt::Horizontal, QObject::tr("Guest number"));
+                  model->setHeaderData(7, Qt::Horizontal, QObject::tr("Reduction"));
+                   model->setHeaderData(8,Qt::Horizontal,QObject::tr("Id employe"));
+         return model;
+          }
