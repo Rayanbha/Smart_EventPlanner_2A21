@@ -3,7 +3,10 @@
 #include <QMainWindow>
 #include "employee.h"
 #include <QModelIndex>
-
+#include <QPainter>
+#include <QDesktopServices>
+#include <QPdfWriter>
+#include <QUrl>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,6 +27,7 @@ private slots:
     void on_pushButton_reset_clicked();
     void on_pushButton_search_clicked();
     void on_pushButton_sort_clicked();
+    void on_pushButton_export_clicked();
 
 
 private:

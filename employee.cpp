@@ -61,7 +61,7 @@ return query.exec();
 
 }
 
-QSqlQueryModel * employee::search(QString ID_emp)
+QSqlQueryModel * employee::searchID(QString ID_emp)
 {
  QSqlQueryModel * model=new QSqlQueryModel();
  model->setQuery("select * from employee where ID_emp like '"+ID_emp+"%'");
@@ -73,6 +73,32 @@ QSqlQueryModel * employee::search(QString ID_emp)
  model->setHeaderData(5,Qt::Horizontal,QObject::tr("salary"));
  model->setHeaderData(6,Qt::Horizontal,QObject::tr("ID chef"));
  return model;
+}
+QSqlQueryModel * employee::searchF(QString first_name)
+{
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from employee where first_name like '"+first_name+"%'");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID emp"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("departement"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("first name"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("password"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("last name"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("salary"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("ID chef"));
+    return model;
+}
+QSqlQueryModel * employee::searchL(QString last_name)
+{
+    QSqlQueryModel * model=new QSqlQueryModel();
+    model->setQuery("select * from employee where last_name like '"+last_name+"%'");
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("ID emp"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("departement"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("first name"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("password"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("last name"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("salary"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("ID chef"));
+    return model;
 }
 QSqlQueryModel * employee::sort_Lastn()
 {

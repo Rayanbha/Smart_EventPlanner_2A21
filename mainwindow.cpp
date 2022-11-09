@@ -165,9 +165,23 @@ void MainWindow::on_pushButton_reset_clicked()
 
 void MainWindow::on_pushButton_search_clicked()
 {
-    QString ID_emp = ui->lineEdit_search->text();
-            ui->tableView1->setModel(Etmp.search(ID_emp));
 
+            if (ui->radioButton_first2->isChecked())
+            {
+                QString first_name = ui->lineEdit_search->text();
+                        ui->tableView1->setModel(Etmp.searchF(first_name));
+            }
+            else if(ui->radioButton_last2->isChecked())
+            {
+                QString last_name = ui->lineEdit_search->text();
+                        ui->tableView1->setModel(Etmp.searchL(last_name));
+            }
+            else if(ui->radioButton_ID->isChecked())
+            {
+                QString ID_emp = ui->lineEdit_search->text();
+
+                        ui->tableView1->setModel(Etmp.searchID(ID_emp));
+            }
 }
 void MainWindow::on_pushButton_sort_clicked()
 {
@@ -183,5 +197,57 @@ void MainWindow::on_pushButton_sort_clicked()
     {
        ui->tableView1->setModel(Etmp.sort_salary());
     }
+}
+void MainWindow::on_pushButton_export_clicked()
+{
+    QPdfWriter pdf("C:/Users/Rayen/Desktop/Esprit 2A21/projetQT/employee.pdf");
+
+                         QPainter painter(&pdf);
+
+                         int i = 4000;
+
+
+                         painter.drawText(4000,1500,"LISTE DES EMPLOYES");
+                         painter.setPen(Qt::red);
+                         painter.setFont(QFont("Arial", 50));
+                         painter.drawRect(3800,1200,1700,500);
+                         painter.drawRect(0,3000,9600,500);
+                         painter.setPen(Qt::black);
+                         painter.setFont(QFont("Arial", 9));
+                         painter.drawText(500,3300,"ID");
+                         painter.drawText(1500,3300,"DEPARTEMENT");
+                         painter.drawText(3500,3300,"FIRST NAME");
+                         painter.drawText(5000,3300,"PASSWORD");
+                         painter.drawText(6500,3300,"LAST NAME");
+                         painter.drawText(8000,3300,"SALARY");
+
+
+                         QSqlQuery query;
+                         query.prepare("select * from employee");
+                         query.exec();
+                         while (query.next())
+                         {
+                             painter.drawText(500,i,query.value(0).toString());
+                             painter.drawText(1800,i,query.value(1).toString());
+                             painter.drawText(3500,i,query.value(2).toString());
+                             painter.drawText(5000,i,query.value(3).toString());
+                             painter.drawText(6500,i,query.value(4).toString());
+                             painter.drawText(8000,i,query.value(5).toString());
+
+
+                             i = i +500;
+                         }
+
+                         int reponse = QMessageBox::question(this, "PDF généré", "Afficher le PDF ?", QMessageBox::Yes |  QMessageBox::No);
+                         if (reponse == QMessageBox::Yes)
+                         {
+                             QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/Rayen/Desktop/Esprit 2A21/projetQT/employee.pdf"));
+
+                             painter.end();
+                         }
+                         if (reponse == QMessageBox::No)
+                         {
+                             painter.end();
+                         }
 }
 

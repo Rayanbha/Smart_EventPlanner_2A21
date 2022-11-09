@@ -33,7 +33,9 @@ public:
     QSqlQueryModel * afficher();
     bool supprimer(QString);
     bool modifier(QString ID_emp);
-    QSqlQueryModel * search(QString ID_emp);
+    QSqlQueryModel * searchID(QString ID_emp);
+    QSqlQueryModel * searchF(QString first_name);
+    QSqlQueryModel * searchL(QString last_name);
     QSqlQueryModel * sort_Lastn();
     QSqlQueryModel * sort_firstn();
     QSqlQueryModel * sort_salary();
