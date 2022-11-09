@@ -11,8 +11,8 @@ QT_CHARTS_USE_NAMESPACE
 
 int main(int argc, char *argv[])
 {
-    QPieSeries *series= new QPieSeries();
-    series->append("")
+  //  QPieSeries *series= new QPieSeries();
+    //series->append("")
 
     QApplication a(argc, argv);
 

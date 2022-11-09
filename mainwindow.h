@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include"client.h"
+#include"dialog_stat.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -27,15 +28,14 @@ private slots:
 
     void on_pushButton_clicked();
 
-    void on_pushButton_2_clicked();
-
-    void on_Search_clicked();
-
     void on_search_clicked();
 
-    void on_Sort_clicked();
 
     void on_sort_clicked();
+
+    void on_Stat_clicked();
+
+    void on_Export_clicked();
 
 private:
     Ui::MainWindow *ui;

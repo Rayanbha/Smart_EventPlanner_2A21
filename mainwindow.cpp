@@ -7,6 +7,7 @@
 #include<iostream>
 #include<QComboBox>
 #include<QRadioButton>
+#include"dialog_stat.h"
 
 MainWindow::MainWindow(QWidget *parent):
      QMainWindow(parent),
@@ -146,12 +147,13 @@ void MainWindow::on_pushButton_clicked()
     ui->lineEdit_CIN->setText(nullptr);
     ui->lineEdit_Email->setText(nullptr);
     ui->event->setCurrentText("Event");
+    ui->CIN2->setText(nullptr);
      ui->tableView->setModel(Etmp.afficher());
 }
 
 
 void MainWindow::on_search_clicked()
-{ QString cin=ui->lineEdit_CIN->text();
+{ QString cin=ui->CIN2->text();
     ui->tableView->setModel(Etmp.search(cin));
 
 }
@@ -173,4 +175,67 @@ ui->tableView_2->setModel(Etmp.sort_LastN());
        ui->tableView_2->setModel(Etmp.sort_FirstN());
    }
 
+}
+
+
+void MainWindow::on_Stat_clicked()
+{
+    Dialog_stat stats;
+    stats.setModal(true);
+    stats.exec();
+}
+
+void MainWindow::on_Export_clicked()
+{
+    QPdfWriter pdf("D:/Work/project QT/client/Client.pdf");
+
+                     QPainter painter(&pdf);
+
+                     int i = 4000;
+
+
+                     painter.drawText(3000,1500,"LISTE DES CLIENTS");
+                     painter.setPen(Qt::blue);
+                     painter.setFont(QFont("Arial", 50));
+                     painter.drawRect(2700,1200,1700,500);
+                     painter.drawRect(0,3000,9600,500);
+                     painter.setPen(Qt::black);
+                     painter.setFont(QFont("Arial", 9));
+                     painter.drawText(500,3300,"First Name");
+                     painter.drawText(1500,3300,"Last Name");
+                     painter.drawText(2500,3300,"Day");
+                     painter.drawText(3500,3300,"Month");
+                     painter.drawText(4500,3300,"Year");
+                     painter.drawText(5500,3300,"CIN");
+                     painter.drawText(7000,3300,"Email");
+                     painter.drawText(8500,3300,"Event");
+
+                     QSqlQuery query;
+                     query.prepare("select * from client");
+                     query.exec();
+                     while (query.next())
+                     {
+                         painter.drawText(500,i,query.value(0).toString());
+                         painter.drawText(1500,i,query.value(1).toString());
+                         painter.drawText(2500,i,query.value(2).toString());
+                         painter.drawText(3500,i,query.value(3).toString());
+                         painter.drawText(4500,i,query.value(4).toString());
+                         painter.drawText(5500,i,query.value(5).toString());
+                         painter.drawText(6500,i,query.value(6).toString());
+                         painter.drawText(8500,i,query.value(7).toString());
+
+                         i = i +500;
+                     }
+
+                     int reponse = QMessageBox::question(this, "PDF généré", "Afficher le PDF ?", QMessageBox::Yes |  QMessageBox::No);
+                     if (reponse == QMessageBox::Yes)
+                     {
+                         QDesktopServices::openUrl(QUrl::fromLocalFile("D:/Work/project QT/client/Client.pdf"));
+
+                         painter.end();
+                     }
+                     if (reponse == QMessageBox::No)
+                     {
+                         painter.end();
+                     }
 }

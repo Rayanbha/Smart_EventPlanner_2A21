@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>876</width>
+    <width>899</width>
     <height>556</height>
    </rect>
   </property>
@@ -37,7 +37,7 @@ Background: white;
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>831</width>
+      <width>881</width>
       <height>481</height>
      </rect>
     </property>
@@ -281,11 +281,21 @@ alternate-background-color: rgb(255, 255, 255);</string>
        <bool>true</bool>
       </property>
       <property name="currentText">
-       <string>Event</string>
+       <string>Wedding</string>
       </property>
       <item>
        <property name="text">
         <string>Wedding</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Divorce</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>whore</string>
        </property>
       </item>
       <item>
@@ -309,7 +319,7 @@ alternate-background-color: rgb(255, 255, 255);</string>
        <rect>
         <x>330</x>
         <y>30</y>
-        <width>481</width>
+        <width>531</width>
         <height>281</height>
        </rect>
       </property>
@@ -320,7 +330,7 @@ alternate-background-color: rgb(255, 255, 255);</string>
         <x>10</x>
         <y>30</y>
         <width>311</width>
-        <height>371</height>
+        <height>401</height>
        </rect>
       </property>
       <property name="title">
@@ -384,7 +394,7 @@ alternate-background-color: rgb(255, 255, 255);</string>
        <rect>
         <x>330</x>
         <y>330</y>
-        <width>481</width>
+        <width>531</width>
         <height>71</height>
        </rect>
       </property>
@@ -417,7 +427,7 @@ alternate-background-color: rgb(255, 255, 255);</string>
         <string>     CIN</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="lineEdit">
+      <widget class="QLineEdit" name="CIN2">
        <property name="geometry">
         <rect>
          <x>110</x>
@@ -465,8 +475,8 @@ alternate-background-color: rgb(255, 255, 255);</string>
       <widget class="QPushButton" name="sort">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>110</y>
+         <x>20</x>
+         <y>140</y>
          <width>75</width>
          <height>23</height>
         </rect>
@@ -478,8 +488,8 @@ alternate-background-color: rgb(255, 255, 255);</string>
       <widget class="QRadioButton" name="radioButton_firstname">
        <property name="geometry">
         <rect>
-         <x>120</x>
-         <y>60</y>
+         <x>110</x>
+         <y>90</y>
          <width>83</width>
          <height>18</height>
         </rect>
@@ -491,8 +501,8 @@ alternate-background-color: rgb(255, 255, 255);</string>
       <widget class="QRadioButton" name="radioButton_lastname">
        <property name="geometry">
         <rect>
-         <x>120</x>
-         <y>110</y>
+         <x>110</x>
+         <y>140</y>
          <width>83</width>
          <height>18</height>
         </rect>
@@ -504,8 +514,8 @@ alternate-background-color: rgb(255, 255, 255);</string>
       <widget class="QRadioButton" name="radioButton_CIN">
        <property name="geometry">
         <rect>
-         <x>120</x>
-         <y>150</y>
+         <x>110</x>
+         <y>190</y>
          <width>83</width>
          <height>18</height>
         </rect>
@@ -517,13 +527,39 @@ alternate-background-color: rgb(255, 255, 255);</string>
         <string>CIN</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="Stat">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>360</y>
+         <width>91</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Statistiques</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Export">
+       <property name="geometry">
+        <rect>
+         <x>70</x>
+         <y>320</y>
+         <width>91</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Export</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QTableView" name="tableView_2">
       <property name="geometry">
        <rect>
         <x>270</x>
         <y>40</y>
-        <width>541</width>
+        <width>591</width>
         <height>231</height>
        </rect>
       </property>
@@ -536,7 +572,7 @@ alternate-background-color: rgb(255, 255, 255);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>876</width>
+     <width>899</width>
      <height>22</height>
     </rect>
    </property>

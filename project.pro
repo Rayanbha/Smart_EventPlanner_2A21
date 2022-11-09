@@ -1,4 +1,5 @@
-QT       += core gui sql charts
+QT       += core gui sql charts printsupport
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -19,15 +20,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     client.cpp \
     connection.cpp \
+    dialog_stat.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    qcustomplot.cpp
 
 HEADERS += \
     client.h \
     connection.h \
-    mainwindow.h
+    dialog_stat.h \
+    mainwindow.h \
+    qcustomplot.h
 
 FORMS += \
+    dialog_stat.ui \
     mainwindow.ui
 
 # Default rules for deployment.
