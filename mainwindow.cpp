@@ -8,7 +8,6 @@
 
 
 
-
 MainWindow::MainWindow(QTabWidget *parent):
       QMainWindow(parent),
       ui(new Ui::MainWindow)
@@ -475,8 +474,5 @@ void MainWindow::on_pushButton_export_clicked()
                              painter.end();
                          }
 }
-//void MainWindow::on_pushButton_stat_clicked()
-//{
 
-//}
 

@@ -60,7 +60,6 @@ query.bindValue(":salary", res);
 return query.exec();
 
 }
-
 QSqlQueryModel * employee::searchID(QString ID_emp)
 {
  QSqlQueryModel * model=new QSqlQueryModel();
