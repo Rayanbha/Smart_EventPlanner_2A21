@@ -39,6 +39,7 @@ public:
     QSqlQueryModel * sort_Lastn();
     QSqlQueryModel * sort_firstn();
     QSqlQueryModel * sort_salary();
+
 };
 
 #endif // EMPLOYEE_H

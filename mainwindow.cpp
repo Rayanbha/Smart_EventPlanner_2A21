@@ -20,7 +20,62 @@ MainWindow::MainWindow(QTabWidget *parent):
     QPixmap pix2("C:/Qt/background");
     ui->label_pic2->setPixmap(pix2);
     ui->tableView1->setModel(Etmp.afficher());
-    ui->tableView2->setModel(Etmp.afficher());
+    //STATISTIQUES
+    QSqlQuery q1,q2,q3,q4,q5;
+    qreal tot=0,c1=0,c2=0,c3=0,c4=0;
+    q1.prepare("SELECT * FROM employee");
+    q1.exec();
+    q2.prepare("SELECT * FROM employee WHERE departement='EM'");
+    q2.exec();
+    q3.prepare("SELECT * FROM employee WHERE departement='SM'");
+    q3.exec();
+    q4.prepare("SELECT * FROM employee WHERE departement='CM'");
+    q4.exec();
+    q5.prepare("SELECT * FROM employee WHERE departement='RH'");
+    q5.exec();
+    while (q1.next()){tot++;}
+    while (q2.next()){c1++;}
+    while (q3.next()){c2++;}
+    while (q4.next()){c3++;}
+    while (q5.next()){c4++;}
+    /*
+    c1=c1/tot;
+    c2=c2/tot;
+    c3=c3/tot;
+    c4=c4/tot;
+    */
+    QBarSet *set1 = new QBarSet("EM");
+    QBarSet *set2 = new QBarSet("SM");
+    QBarSet *set3 = new QBarSet("CM");
+    QBarSet *set4 = new QBarSet("RH");
+    *set1 << c1 ;
+    *set2 << c2 ;
+    *set3 << c3 ;
+    *set4 << c4 ;
+    QBarSeries *series = new QBarSeries();
+    series->append(set1);
+    series->append(set2);
+    series->append(set3);
+    series->append(set4);
+    QChart *chart = new QChart();
+    chart->addSeries(series);
+    chart->setTitle("STATISTIQUE");
+    chart->setAnimationOptions(QChart::AllAnimations);
+    QStringList categories;
+    categories << "STATISTIQUE";
+    QBarCategoryAxis *axis = new QBarCategoryAxis();
+    axis->append(categories);
+    chart->createDefaultAxes();
+    chart->setAxisX(axis, series);
+    chart->legend()->setVisible(true);
+    chart->legend()->setAlignment(Qt::AlignBottom);
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    chartView->setMinimumSize(591,441);
+    chartView->setParent(ui->tableView2);
+    QPalette pal = qApp->palette();
+    qApp->setPalette(pal);
+
 
 }
 
@@ -46,7 +101,63 @@ void MainWindow::on_pushButton_ajouter_clicked()
      if(test)
      {
          ui->tableView1->setModel(Etmp.afficher());
-         ui->tableView2->setModel(Etmp.afficher());
+//STATISTIQUES
+         QSqlQuery q1,q2,q3,q4,q5;
+         qreal tot=0,c1=0,c2=0,c3=0,c4=0;
+         q1.prepare("SELECT * FROM employee");
+         q1.exec();
+         q2.prepare("SELECT * FROM employee WHERE departement='EM'");
+         q2.exec();
+         q3.prepare("SELECT * FROM employee WHERE departement='SM'");
+         q3.exec();
+         q4.prepare("SELECT * FROM employee WHERE departement='CM'");
+         q4.exec();
+         q5.prepare("SELECT * FROM employee WHERE departement='RH'");
+         q5.exec();
+         while (q1.next()){tot++;}
+         while (q2.next()){c1++;}
+         while (q3.next()){c2++;}
+         while (q4.next()){c3++;}
+         while (q5.next()){c4++;}
+         /*
+         c1=c1/tot;
+         c2=c2/tot;
+         c3=c3/tot;
+         c4=c4/tot;
+         */
+         QBarSet *set1 = new QBarSet("EM");
+         QBarSet *set2 = new QBarSet("SM");
+         QBarSet *set3 = new QBarSet("CM");
+         QBarSet *set4 = new QBarSet("RH");
+         *set1 << c1 ;
+         *set2 << c2 ;
+         *set3 << c3 ;
+         *set4 << c4 ;
+         QBarSeries *series = new QBarSeries();
+         series->append(set1);
+         series->append(set2);
+         series->append(set3);
+         series->append(set4);
+         QChart *chart = new QChart();
+         chart->addSeries(series);
+         chart->setTitle("STATISTIQUE");
+         chart->setAnimationOptions(QChart::AllAnimations);
+         QStringList categories;
+         categories << "STATISTIQUE";
+         QBarCategoryAxis *axis = new QBarCategoryAxis();
+         axis->append(categories);
+         chart->createDefaultAxes();
+         chart->setAxisX(axis, series);
+         chart->legend()->setVisible(true);
+         chart->legend()->setAlignment(Qt::AlignBottom);
+         QChartView *chartView = new QChartView(chart);
+         chartView->setRenderHint(QPainter::Antialiasing);
+         chartView->setMinimumSize(591,441);
+         chartView->setParent(ui->tableView2);
+         QPalette pal = qApp->palette();
+         qApp->setPalette(pal);
+
+
       QMessageBox::information(nullptr,QObject::tr("add completed"),
                                QObject::tr("add completed \n"
                                            "Click Cancel to exit."),QMessageBox::Cancel);
@@ -75,7 +186,64 @@ void MainWindow::on_pushButton_supprimer_clicked()
      {
 
          ui->tableView1->setModel(Etmp.afficher());
-         ui->tableView2->setModel(Etmp.afficher());
+         //STATISTIQUES
+         QSqlQuery q1,q2,q3,q4,q5;
+         qreal tot=0,c1=0,c2=0,c3=0,c4=0;
+         q1.prepare("SELECT * FROM employee");
+         q1.exec();
+         q2.prepare("SELECT * FROM employee WHERE departement='EM'");
+         q2.exec();
+         q3.prepare("SELECT * FROM employee WHERE departement='SM'");
+         q3.exec();
+         q4.prepare("SELECT * FROM employee WHERE departement='CM'");
+         q4.exec();
+         q5.prepare("SELECT * FROM employee WHERE departement='RH'");
+         q5.exec();
+         while (q1.next()){tot++;}
+         while (q2.next()){c1++;}
+         while (q3.next()){c2++;}
+         while (q4.next()){c3++;}
+         while (q5.next()){c4++;}
+         /*
+         c1=c1/tot;
+         c2=c2/tot;
+         c3=c3/tot;
+         c4=c4/tot;
+         */
+         QBarSet *set1 = new QBarSet("EM");
+         QBarSet *set2 = new QBarSet("SM");
+         QBarSet *set3 = new QBarSet("CM");
+         QBarSet *set4 = new QBarSet("RH");
+         *set1 << c1 ;
+         *set2 << c2 ;
+         *set3 << c3 ;
+         *set4 << c4 ;
+         QBarSeries *series = new QBarSeries();
+         series->append(set1);
+         series->append(set2);
+         series->append(set3);
+         series->append(set4);
+         QChart *chart = new QChart();
+         chart->addSeries(series);
+         chart->setTitle("STATISTIQUE");
+         chart->setAnimationOptions(QChart::AllAnimations);
+         QStringList categories;
+         categories << "STATISTIQUE";
+         QBarCategoryAxis *axis = new QBarCategoryAxis();
+         axis->append(categories);
+         chart->createDefaultAxes();
+         chart->setAxisX(axis, series);
+         chart->legend()->setVisible(true);
+         chart->legend()->setAlignment(Qt::AlignBottom);
+         QChartView *chartView = new QChartView(chart);
+         chartView->setRenderHint(QPainter::Antialiasing);
+         chartView->setMinimumSize(591,441);
+         chartView->setParent(ui->tableView2);
+         QPalette pal = qApp->palette();
+         qApp->setPalette(pal);
+
+
+
       QMessageBox::information(nullptr,QObject::tr("delete completed"),
                                QObject::tr("delete completed \n"
                                            "Click Cancel to exit."),QMessageBox::Cancel);
@@ -131,7 +299,64 @@ void MainWindow::on_pushButton_modifier_clicked()
       {
 
           ui->tableView1->setModel(Etmp.afficher());
-          ui->tableView2->setModel(Etmp.afficher());
+          //STATISTIQUES
+          QSqlQuery q1,q2,q3,q4,q5;
+          qreal tot=0,c1=0,c2=0,c3=0,c4=0;
+          q1.prepare("SELECT * FROM employee");
+          q1.exec();
+          q2.prepare("SELECT * FROM employee WHERE departement='EM'");
+          q2.exec();
+          q3.prepare("SELECT * FROM employee WHERE departement='SM'");
+          q3.exec();
+          q4.prepare("SELECT * FROM employee WHERE departement='CM'");
+          q4.exec();
+          q5.prepare("SELECT * FROM employee WHERE departement='RH'");
+          q5.exec();
+          while (q1.next()){tot++;}
+          while (q2.next()){c1++;}
+          while (q3.next()){c2++;}
+          while (q4.next()){c3++;}
+          while (q5.next()){c4++;}
+          /*
+          c1=c1/tot;
+          c2=c2/tot;
+          c3=c3/tot;
+          c4=c4/tot;
+          */
+          QBarSet *set1 = new QBarSet("EM");
+          QBarSet *set2 = new QBarSet("SM");
+          QBarSet *set3 = new QBarSet("CM");
+          QBarSet *set4 = new QBarSet("RH");
+          *set1 << c1 ;
+          *set2 << c2 ;
+          *set3 << c3 ;
+          *set4 << c4 ;
+          QBarSeries *series = new QBarSeries();
+          series->append(set1);
+          series->append(set2);
+          series->append(set3);
+          series->append(set4);
+          QChart *chart = new QChart();
+          chart->addSeries(series);
+          chart->setTitle("STATISTIQUE");
+          chart->setAnimationOptions(QChart::AllAnimations);
+          QStringList categories;
+          categories << "STATISTIQUE";
+          QBarCategoryAxis *axis = new QBarCategoryAxis();
+          axis->append(categories);
+          chart->createDefaultAxes();
+          chart->setAxisX(axis, series);
+          chart->legend()->setVisible(true);
+          chart->legend()->setAlignment(Qt::AlignBottom);
+          QChartView *chartView = new QChartView(chart);
+          chartView->setRenderHint(QPainter::Antialiasing);
+          chartView->setMinimumSize(591,441);
+          chartView->setParent(ui->tableView2);
+          QPalette pal = qApp->palette();
+          qApp->setPalette(pal);
+
+
+
        QMessageBox::information(nullptr,QObject::tr("update completed"),
                                 QObject::tr("update completed \n"
                                             "Click Cancel to exit."),QMessageBox::Cancel);
@@ -238,7 +463,7 @@ void MainWindow::on_pushButton_export_clicked()
                              i = i +500;
                          }
 
-                         int reponse = QMessageBox::question(this, "PDF généré", "Afficher le PDF ?", QMessageBox::Yes |  QMessageBox::No);
+                         int reponse = QMessageBox::question(this, "PDF exported", "see the PDF now ?", QMessageBox::Yes |  QMessageBox::No);
                          if (reponse == QMessageBox::Yes)
                          {
                              QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/Rayen/Desktop/Esprit 2A21/projetQT/employee.pdf"));
@@ -250,4 +475,8 @@ void MainWindow::on_pushButton_export_clicked()
                              painter.end();
                          }
 }
+//void MainWindow::on_pushButton_stat_clicked()
+//{
+
+//}
 
