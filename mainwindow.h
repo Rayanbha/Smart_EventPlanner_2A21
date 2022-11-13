@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 #include <QMainWindow>
 #include "employee.h"
+#include "message.h"
 #include <QModelIndex>
 #include <QPainter>
 #include <QDesktopServices>
@@ -45,8 +46,7 @@ private slots:
     void on_pushButton_search_clicked();
     void on_pushButton_sort_clicked();
     void on_pushButton_export_clicked();
-  //  void on_pushButton_stat_clicked();
-
+    void on_pushButton_send_clicked();
 
 private:
     Ui::MainWindow *ui;

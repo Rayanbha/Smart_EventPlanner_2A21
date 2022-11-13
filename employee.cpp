@@ -148,4 +148,3 @@ QSqlQueryModel * employee::sort_salary()
 
 }
 
-

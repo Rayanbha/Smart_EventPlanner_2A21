@@ -532,7 +532,7 @@
     </widget>
     <widget class="QWidget" name="RH_employees">
      <attribute name="title">
-      <string>Employee</string>
+      <string>messagerie</string>
      </attribute>
      <widget class="QLabel" name="label_pic2">
       <property name="geometry">
@@ -550,31 +550,31 @@
      <widget class="QTableView" name="tableView2">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>60</y>
-        <width>591</width>
-        <height>441</height>
+        <x>20</x>
+        <y>20</y>
+        <width>261</width>
+        <height>281</height>
        </rect>
       </property>
      </widget>
      <widget class="QGroupBox" name="groupBox_2">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>60</y>
-        <width>261</width>
-        <height>391</height>
+        <x>310</x>
+        <y>410</y>
+        <width>601</width>
+        <height>111</height>
        </rect>
       </property>
       <property name="title">
        <string>controle</string>
       </property>
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QPushButton" name="pushButton_send">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>340</y>
-         <width>241</width>
+         <x>240</x>
+         <y>70</y>
+         <width>121</width>
          <height>28</height>
         </rect>
        </property>
@@ -582,28 +582,31 @@
         <string>send message</string>
        </property>
       </widget>
-      <widget class="QTextEdit" name="textEdit">
+      <widget class="QLineEdit" name="lineEdit_send">
        <property name="geometry">
         <rect>
          <x>10</x>
          <y>20</y>
-         <width>241</width>
-         <height>311</height>
+         <width>571</width>
+         <height>31</height>
         </rect>
+       </property>
+       <property name="text">
+        <string>from </string>
+       </property>
+       <property name="placeholderText">
+        <string/>
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pushButton_stat">
+     <widget class="QListView" name="chatbox">
       <property name="geometry">
        <rect>
-        <x>790</x>
+        <x>310</x>
         <y>20</y>
-        <width>93</width>
-        <height>28</height>
+        <width>591</width>
+        <height>381</height>
        </rect>
-      </property>
-      <property name="text">
-       <string>Stat</string>
       </property>
      </widget>
     </widget>

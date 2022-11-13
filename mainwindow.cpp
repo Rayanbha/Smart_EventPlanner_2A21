@@ -70,7 +70,7 @@ MainWindow::MainWindow(QTabWidget *parent):
     chart->legend()->setAlignment(Qt::AlignBottom);
     QChartView *chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
-    chartView->setMinimumSize(591,441);
+    chartView->setMinimumSize(261,281);
     chartView->setParent(ui->tableView2);
     QPalette pal = qApp->palette();
     qApp->setPalette(pal);
@@ -151,7 +151,7 @@ void MainWindow::on_pushButton_ajouter_clicked()
          chart->legend()->setAlignment(Qt::AlignBottom);
          QChartView *chartView = new QChartView(chart);
          chartView->setRenderHint(QPainter::Antialiasing);
-         chartView->setMinimumSize(591,441);
+         chartView->setMinimumSize(261,281);
          chartView->setParent(ui->tableView2);
          QPalette pal = qApp->palette();
          qApp->setPalette(pal);
@@ -236,7 +236,7 @@ void MainWindow::on_pushButton_supprimer_clicked()
          chart->legend()->setAlignment(Qt::AlignBottom);
          QChartView *chartView = new QChartView(chart);
          chartView->setRenderHint(QPainter::Antialiasing);
-         chartView->setMinimumSize(591,441);
+         chartView->setMinimumSize(261,281);
          chartView->setParent(ui->tableView2);
          QPalette pal = qApp->palette();
          qApp->setPalette(pal);
@@ -349,7 +349,7 @@ void MainWindow::on_pushButton_modifier_clicked()
           chart->legend()->setAlignment(Qt::AlignBottom);
           QChartView *chartView = new QChartView(chart);
           chartView->setRenderHint(QPainter::Antialiasing);
-          chartView->setMinimumSize(591,441);
+          chartView->setMinimumSize(261,281);
           chartView->setParent(ui->tableView2);
           QPalette pal = qApp->palette();
           qApp->setPalette(pal);
@@ -476,3 +476,14 @@ void MainWindow::on_pushButton_export_clicked()
 }
 
 
+//messagerie (chat Box)
+void MainWindow::on_pushButton_send_clicked()
+{
+    QString MSG=ui->lineEdit_send->text();
+    message m(MSG);
+    bool test5=m.ajoutermsg();
+      if(test5)
+      {
+      ui->chatbox->setModel(m.affichermsg());
+      }
+}
