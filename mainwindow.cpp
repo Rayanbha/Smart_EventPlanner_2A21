@@ -485,5 +485,7 @@ void MainWindow::on_pushButton_send_clicked()
       if(test5)
       {
       ui->chatbox->setModel(m.affichermsg());
+      ui->lineEdit_send->clear();
+      ui->lineEdit_send->setText("from 211JMT:");
       }
 }

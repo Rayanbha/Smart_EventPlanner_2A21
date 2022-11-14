@@ -15,11 +15,11 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_login_clicked()
 {
     QString username,password;
-   /* QString R,C,S,E;
+    QString R,C,S,E,q;
     R="RH";
     C="CM";
     S="SM";
-    E="EM";*/
+    E="EM";
     username=ui->lineEdit_Username->text();
     password=ui->lineEdit_Password->text();
     QSqlQuery qry;
@@ -27,12 +27,12 @@ void MainWindow::on_pushButton_login_clicked()
 
     if (qry.exec())
     {
-        //QString q =qry.value(1).toString();
-        //qDebug()<<q;
-        int count=0;
-        while(qry.next())
-        {
 
+        int count=0;
+       while(qry.next())
+        {
+           q = qry.value(1).toString();
+           qDebug()<<q;
             count++;
         }
         if(count==1)
@@ -43,29 +43,29 @@ void MainWindow::on_pushButton_login_clicked()
 
 
               this->hide();
-                 if(username=="211JMT3727")
-                 //if (q.compare(R)==0)
+                 //if(username=="211JMT3727")
+                 if (q.compare(R)==0)
                   {
                      employee employee;
                      employee.setModal(true);
                      employee.exec();
                   }
-                 else if(username=="211JMT6094")
-                 //else if (q.compare(C)==0)
+                // else if(username=="211JMT6094")
+                 else if (q.compare(C)==0)
                   {
                      client client;
                      client.setModal(true);
                      client.exec();
                   }
-                 else if(username=="211JMT6438")
-                // else if (q.compare(S)==0)
+                // else if(username=="211JMT6438")
+                 else if (q.compare(S)==0)
                   {
                      supplier supplier;
                      supplier.setModal(true);
                      supplier.exec();
                   }
-                 else if(username=="211JMT9876")
-                 // else if (q.compare(E)==0)
+                // else if(username=="211JMT9876")
+                 else if (q.compare(E)==0)
                   {
                      hafla hafla;
                      hafla.setModal(true);
