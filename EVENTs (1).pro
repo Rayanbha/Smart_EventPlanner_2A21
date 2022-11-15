@@ -1,6 +1,9 @@
 QT       += core gui sql
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT       += core gui charts
+     quick
+QT       += network
+QT += quickwidgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets quickwidgets
 
 CONFIG += c++11
 
@@ -24,12 +27,20 @@ SOURCES += \
 HEADERS += \
     connection.h \
     mainwindow.h \
+    map.h \
     provider.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    map.ui
+    map.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    qml.qrc
+DISTFILES += \
+    map.qml \

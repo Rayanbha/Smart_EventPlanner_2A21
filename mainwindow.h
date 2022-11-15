@@ -4,6 +4,14 @@
 #include <QMainWindow>
 #include "provider.h"
 #include <QMessageBox>
+//#include"map.h"
+#include "ui_mainwindow.h"
+//#include "statistique.h"
+#include <QCompleter>
+#include <QSqlQuery>
+//#include "ui_map.h"
+
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -24,10 +32,24 @@ private slots:
 
     void on_pushButton_delete_providert_clicked();
 
-    void on_tableView_provider_activated(const QModelIndex &index);
+
+        void on_pushButton_sort_providers_clicked();
+
+        void on_recherche_clicked();
+
+        void on_pushButton_Stat_clicked();
+
+        void on_pushButton_add_provider_5_clicked();
 
 private:
     Ui::MainWindow *ui;
+    QCompleter * Model_Completer;
+    QList<qreal> stat_budget();
+    QList <QString> stat_bud();
+    QSqlQuery qry;
+
+
     Provider ptmp ;
+   // map *m;
 };
 #endif // MAINWINDOW_H

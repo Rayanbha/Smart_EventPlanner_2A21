@@ -133,14 +133,6 @@ void MainWindow::on_pushButton_delete_providert_clicked()
     }
 }
 
-
-
-
-
-
-
-
-
 void MainWindow::on_recherche_clicked()
 {
     Provider ptmp;
@@ -160,12 +152,6 @@ void MainWindow::on_pushButton_sort_providers_clicked()
                             ui->tableView_provider->setModel(ptmp.ordre_num());}
 
     }
-
-
-
-
-
-
 
 /*void MainWindow::on_pushButton_clicked()
 {

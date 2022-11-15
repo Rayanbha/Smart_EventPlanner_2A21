@@ -1,5 +1,10 @@
 #include "provider.h"
-
+#include <QSqlQuery>
+#include<QDebug>
+#include<QTimer>
+#include<QDateTime>
+#include "mainwindow.h"
+#include<QSystemTrayIcon>
 Provider::Provider()
 {
 
@@ -64,8 +69,85 @@ bool Provider::modifier(QString id)
 bool Provider::supprimer(QString id)
 {
     QSqlQuery query;
-    query.prepare("DELETE FROM fournisseur WHERE id_fournisseur= :id");
+    query.prepare("DELETE FROM FOURNISSEUR WHERE id_fournisseur= :id");
     query.bindValue(":id",id);
     return query.exec();
 }
+
+
+
+QSqlQueryModel *Provider::rech(QString nom,QString prenom,QString type)
+{
+
+    QSqlQueryModel *model= new QSqlQueryModel();//le modelle qu'on vas afficher de dans
+    model->setQuery("SELECT * FROM FOURNISSEUR WHERE NOM LIKE'%"+nom+"%' and PRENOM LIKE'%"+prenom+"%'and TYPE LIKE'%"+type+"%'" );
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("type"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("adresse"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("numero téléphone"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("prix"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("qualité"));
+      return model;
+}
+
+QSqlQueryModel *Provider::ordre_name()
+     {
+    QSqlQueryModel *model=new QSqlQueryModel();
+    model->setQuery("select * from FOURNISSEUR   order by NOM " );
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("type"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("adresse"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("numero téléphone"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("prix"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("qualité"));
+         return model;
+}
+
+
+QSqlQueryModel *Provider::ordre_num()
+     {
+    QSqlQueryModel *model=new QSqlQueryModel();
+    model->setQuery("select * from FOURNISSEUR    order by NUM " );
+    model->setHeaderData(0,Qt::Horizontal,QObject::tr("id"));
+    model->setHeaderData(1,Qt::Horizontal,QObject::tr("nom"));
+    model->setHeaderData(2,Qt::Horizontal,QObject::tr("prenom"));
+    model->setHeaderData(3,Qt::Horizontal,QObject::tr("type"));
+    model->setHeaderData(4,Qt::Horizontal,QObject::tr("adresse"));
+    model->setHeaderData(5,Qt::Horizontal,QObject::tr("numero téléphone"));
+    model->setHeaderData(6,Qt::Horizontal,QObject::tr("prix"));
+    model->setHeaderData(7,Qt::Horizontal,QObject::tr("qualité"));
+
+         return model;
+}
+
+//stat
+QList<qreal> MainWindow::stat_budget()
+{
+    QList<qreal> list ;
+    QSqlQuery query;
+    query.prepare("SELECT * FROM FOURNISSEUR ");//prerparer la bd
+    query.exec();//executer la BD
+    while(query.next())
+    {list.append(query.value(6).toInt());}//nejbed num m base
+
+    return list;
+}
+
+QList<QString> MainWindow::stat_bud()
+{
+    QList<QString> list ;
+    QSqlQuery query;
+    query.prepare("SELECT*FROM FOURNISSEUR ");
+    query.exec();
+    while(query.next())
+    {list.append(query.value(3).toString());}
+
+    return list;
+}
+
+
 
