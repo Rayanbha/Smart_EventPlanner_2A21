@@ -1,5 +1,12 @@
 #include "events.h"
-
+#include <QPdfWriter>
+#include <QPainter>
+#include <QDesktopServices>
+#include <QPrinter>
+#include <QFileDialog>
+#include <QTextDocument>
+#include <QMessageBox>
+#include <QSystemTrayIcon>
 Events::Events()
 {
 
@@ -77,12 +84,12 @@ Events::Events()
      }
 
 
-     QSqlQueryModel * Events::recherche(int id)
+     QSqlQueryModel * Events::recherche(QString res)
      {
-         QString res=QString ::number(id);
+
 
          QSqlQueryModel *model=new QSqlQueryModel();
-         model->setQuery("SELECT * FROM EVENT WHERE ID_EVENT ='"+res+"'");
+         model->setQuery("SELECT * FROM event WHERE ( id_event LIKE '%"+res+"%' OR event_name LIKE '%"+res+"%' OR event_type LIKE '%"+res+"%' OR event_client LIKE '%"+res+"%' ) ");
          model->setHeaderData(0, Qt::Horizontal, QObject::tr("ID event"));
          model->setHeaderData(1, Qt::Horizontal, QObject::tr("Event name"));
           model->setHeaderData(2,Qt::Horizontal,QObject::tr("Date"));
@@ -143,3 +150,65 @@ Events::Events()
                    model->setHeaderData(8,Qt::Horizontal,QObject::tr("Id employe"));
          return model;
           }
+      void Events::statistique(QVector<double>* ticks,QVector<QString> *labels)
+      {
+          QSqlQuery q;
+          int i=0;
+          q.exec("select Event_name from EVENT");
+          while (q.next())
+          {
+              QString id_event = q.value(0).toString();
+              i++;
+              *ticks<<i;
+              *labels <<id_event;
+          }
+      }
+      void Events::CREATION_PDF()
+      {
+          QString fileName = QFileDialog::getSaveFileName((QWidget* )0, "Export PDF", QString(), "*.pdf");
+          if (QFileInfo(fileName).suffix().isEmpty())
+              { fileName.append(".pdf"); }
+
+          QPrinter printer(QPrinter::PrinterResolution);
+          printer.setOutputFormat(QPrinter::PdfFormat);
+          printer.setPaperSize(QPrinter::A4);
+          printer.setOutputFileName(fileName);
+
+          QTextDocument doc;
+          QSqlQuery q;
+          q.prepare("SELECT * FROM EVENT ");
+          q.exec();
+          QString pdf="<br> <h1  style='color:blue'>LISTE DES EVENT  <br></h1>\n <br> <table>  <tr>  <th>CIN </th> <th>NOM </th> <th>PRENOM  </th> <th>AGE  </th><th>TEL  </th><th>ADRESS   </th> </tr>" ;
+      //br traja ll star oel tr tzidlek colonne th tzidlek ligne h1 asghrr size o akbr size h6 //
+
+          while ( q.next())
+              {
+
+              pdf= pdf+ " <br> <tr> <td>"+ q.value(0).toString()+" " + q.value(1).toString() +"</td>   <td>" +q.value(2).toString() +" <td>" +q.value(3).toString() +" <td>" +q.value(4).toString() +" <td>" +q.value(5).toString() +" "" " "</td> </td>" ;
+          }
+          doc.setHtml(pdf);
+          doc.setPageSize(printer.pageRect().size()); // This is necessary if you want to hide the page number
+          doc.print(&printer);
+
+
+      }
+
+
+      float Events::alerte()
+      {
+          int i=0;
+          QSqlQuery query("SELECT EVENT_COST FROM EVENT");
+          while (query.next())
+          {
+
+              if (query.value(0).toFloat()<1000)
+              {
+                  i++;
+              }
+
+          }
+          return i;
+      }
+
+
+

@@ -5,6 +5,15 @@
 #include <QSqlQuery>
 #include <QSqlQueryModel>
 
+#include <QFileDialog>
+#include <QTextDocument>
+#include <QPdfWriter>
+#include <QPainter>
+#include <QDesktopServices>
+#include <QPrinter>
+#include <QFileDialog>
+#include <QTextDocument>
+#include <QMessageBox>
 class Events
 {
 private :
@@ -28,8 +37,12 @@ public:
          bool modifier(int id_event );
          QSqlQueryModel *tri_date();
          QSqlQueryModel* tri_type();
-         QSqlQueryModel * recherche(int id);
+         QSqlQueryModel * recherche(QString );
          QSqlQueryModel* tri_id();
+         void statistique(QVector<double>* ticks,QVector<QString> *labels);
+         void CREATION_PDF();
+         float alerte();
+
 };
 
 #endif // EVENTS_H
