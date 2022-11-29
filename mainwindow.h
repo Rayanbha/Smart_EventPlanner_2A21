@@ -41,6 +41,8 @@ private slots:
 
         void on_pushButton_add_provider_5_clicked();
 
+        void on_pushButton_location_clicked();
+
 private:
     Ui::MainWindow *ui;
     QCompleter * Model_Completer;

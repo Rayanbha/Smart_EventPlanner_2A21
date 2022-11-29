@@ -3,7 +3,10 @@
 //#include "map.h"
 #include <QtCharts>
 #include <QChartView>
+#include<QDesktopServices>//class contient service mtaa lien google
+#include<QUrl>//class tasnaa bih lurl
 #include <QPieSeries>
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -133,14 +136,6 @@ void MainWindow::on_pushButton_delete_providert_clicked()
     }
 }
 
-
-
-
-
-
-
-
-
 void MainWindow::on_recherche_clicked()
 {
     Provider ptmp;
@@ -161,12 +156,6 @@ void MainWindow::on_pushButton_sort_providers_clicked()
 
     }
 
-
-
-
-
-
-
 /*void MainWindow::on_pushButton_clicked()
 {
     m= new map;
@@ -177,7 +166,7 @@ void MainWindow::on_pushButton_sort_providers_clicked()
 void MainWindow::on_pushButton_Stat_clicked()
 {
     QSqlQueryModel * model= new QSqlQueryModel();
-            model->setQuery("select * from FOURNISSEUR where prix < 100 "); //bech thez mel base de donnee
+            model->setQuery("select * from FOURNISSEUR where prix < 100 ");
             float prix=model->rowCount();
             model->setQuery("select * from FOURNISSEUR where prix  between 100 and 1000 ");
             float prixx=model->rowCount();
@@ -264,3 +253,13 @@ void MainWindow::on_pushButton_add_provider_5_clicked()
               QMessageBox::information(this, QObject::tr("PDF Enregistré!"),
               QObject::tr("PDF Enregistré!.\n" "Click Cancel to exit."), QMessageBox::Cancel);
     }
+
+void MainWindow::on_pushButton_location_clicked()//fonction
+{
+    QString link="https://www.google.com/maps/@36.8800893,10.1927418,14z";//thot lien lil fonction eli thb aaleha expl lien google
+    QDesktopServices::openUrl(QUrl(link));//tasnaa objet type qrl wyekhou comme parametre lien eli snaaneh l 259 bch nestaaml url eli bch ykhalini
+    //open url bch tekhou lobjet eli snaatou
+
+
+
+}

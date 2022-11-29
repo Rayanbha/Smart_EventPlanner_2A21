@@ -28,7 +28,7 @@ public:
 
 QSqlQueryModel *rech(QString,QString,QString);
 QSqlQueryModel *ordre_name();
-                QSqlQueryModel *ordre_num();
+QSqlQueryModel *ordre_num();
 
 };
 
