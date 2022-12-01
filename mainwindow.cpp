@@ -12,6 +12,7 @@ MainWindow::MainWindow(QTabWidget *parent):
       QMainWindow(parent),
       ui(new Ui::MainWindow)
 {
+    //
     ui->setupUi(this);
     ui->lineEdit_salary->setValidator(new QIntValidator(100,10000,this)); //salary should be between 100 and 10000
     QPixmap pix("C:/Qt/background");
@@ -70,7 +71,7 @@ MainWindow::MainWindow(QTabWidget *parent):
     chart->legend()->setAlignment(Qt::AlignBottom);
     QChartView *chartView = new QChartView(chart);
     chartView->setRenderHint(QPainter::Antialiasing);
-    chartView->setMinimumSize(261,281);
+    chartView->setMinimumSize(281,311);
     chartView->setParent(ui->tableView2);
     QPalette pal = qApp->palette();
     qApp->setPalette(pal);
@@ -151,7 +152,7 @@ void MainWindow::on_pushButton_ajouter_clicked()
          chart->legend()->setAlignment(Qt::AlignBottom);
          QChartView *chartView = new QChartView(chart);
          chartView->setRenderHint(QPainter::Antialiasing);
-         chartView->setMinimumSize(261,281);
+         chartView->setMinimumSize(281,311);
          chartView->setParent(ui->tableView2);
          QPalette pal = qApp->palette();
          qApp->setPalette(pal);
@@ -236,7 +237,7 @@ void MainWindow::on_pushButton_supprimer_clicked()
          chart->legend()->setAlignment(Qt::AlignBottom);
          QChartView *chartView = new QChartView(chart);
          chartView->setRenderHint(QPainter::Antialiasing);
-         chartView->setMinimumSize(261,281);
+         chartView->setMinimumSize(281,311);
          chartView->setParent(ui->tableView2);
          QPalette pal = qApp->palette();
          qApp->setPalette(pal);
@@ -349,7 +350,7 @@ void MainWindow::on_pushButton_modifier_clicked()
           chart->legend()->setAlignment(Qt::AlignBottom);
           QChartView *chartView = new QChartView(chart);
           chartView->setRenderHint(QPainter::Antialiasing);
-          chartView->setMinimumSize(261,281);
+          chartView->setMinimumSize(281,311);
           chartView->setParent(ui->tableView2);
           QPalette pal = qApp->palette();
           qApp->setPalette(pal);
@@ -481,7 +482,7 @@ void MainWindow::on_pushButton_send_clicked()
 {
     QString MSG=ui->lineEdit_send->text();
     message m(MSG);
-    bool test5=m.ajoutermsg();
+    bool test5=m.sendmsg();
       if(test5)
       {
       ui->chatbox->setModel(m.affichermsg());
@@ -489,3 +490,4 @@ void MainWindow::on_pushButton_send_clicked()
       ui->lineEdit_send->setText("from 211JMT:");
       }
 }
+//

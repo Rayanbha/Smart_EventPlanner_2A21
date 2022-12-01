@@ -14,7 +14,7 @@ model->setHeaderData(0,Qt::Vertical,QObject::tr("message"));
 
 return model;
 }
-bool message::ajoutermsg()
+bool message::sendmsg()
 {
    QSqlQuery query;
    query.prepare("insert into message (msg)" "values (:msg)");

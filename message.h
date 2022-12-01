@@ -3,10 +3,12 @@
 #include<QString>
 #include<QSqlQuery>
 #include<QSqlQueryModel>
+//#include <QTime>
 
 class message
 {
     QString msg;
+    //QDate time=QDate::currentDate();
 
 public:
     //constructeurs
@@ -18,7 +20,7 @@ public:
     void setID(QString messaget){msg=messaget;}
     //fonction
     QSqlQueryModel * affichermsg();
-    bool ajoutermsg();
+    bool sendmsg();
 
 };
 

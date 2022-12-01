@@ -6,6 +6,20 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    int ret=A.connect_arduino();
+             switch(ret){
+             case(0):qDebug()<< "arduino is availble and connected to :"<< A.getarduino_port_name();
+                 break;
+             case(1):qDebug()<< "arduino is availble but not connected to :"<< A.getarduino_port_name();
+                 break;
+             case(-1):qDebug()<< "arduino is not availble";
+             }
+            // QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
+
+
+   QObject::connect(&A.serial,SIGNAL(readyRead()),this,SLOT(update_label())); // permet de lancer
+
+     //le slot update_label suite à la reception du signal readyRead (reception des données).
 }
 
 MainWindow::~MainWindow()
@@ -42,35 +56,36 @@ void MainWindow::on_pushButton_login_clicked()
                                                  "Click Cancel to exit."),QMessageBox::Cancel);
 
 
-              this->hide();
-                 //if(username=="211JMT3727")
+             // this->hide();
+
                  if (q.compare(R)==0)
                   {
                      employee employee;
                      employee.setModal(true);
                      employee.exec();
+
                   }
-                // else if(username=="211JMT6094")
                  else if (q.compare(C)==0)
                   {
                      client client;
                      client.setModal(true);
                      client.exec();
                   }
-                // else if(username=="211JMT6438")
+
                  else if (q.compare(S)==0)
                   {
                      supplier supplier;
                      supplier.setModal(true);
                      supplier.exec();
                   }
-                // else if(username=="211JMT9876")
+
                  else if (q.compare(E)==0)
                   {
                      hafla hafla;
                      hafla.setModal(true);
                      hafla.exec();
                   }
+
         }
         if(count>1)
         {
@@ -86,3 +101,55 @@ void MainWindow::on_pushButton_login_clicked()
         }
     }
 }
+QString ch="";
+
+void MainWindow::update_label()  { //label arduino
+
+    QSqlQuery query;
+     QByteArray data="";
+     QString mdp="";
+
+    data=A.read_from_arduino();
+
+     qDebug() <<  " data is " <<*data;
+     if(ch.length()<=10)
+
+
+   {  ch=ch+data;}
+       data[11]='\0';
+     qDebug() <<  " ch is " <<ch;
+
+
+    if(ch!="")
+       {
+        query.prepare("select * from employee where password='"+ch+"'");
+        if(query.exec())
+        {
+           mdp=ch;
+          ui->lineEdit_Password->setText(ch);
+         QString message ="welcome";
+         QByteArray br = message.toUtf8();
+         A.write_to_arduino(br);
+         ch="";
+         }
+        else
+        {
+            QString message ="acces denied";
+            QByteArray br = message.toUtf8();
+            A.write_to_arduino(br);
+            QMessageBox::critical(nullptr,QObject::tr("login failed"),
+                                    QObject::tr("FAILED TO connected ..........  \n"
+                                                 "acces denied \n"
+                                                "Click Cancel to exit."),QMessageBox::Cancel);
+            ch="";
+        }
+
+       }
+
+   /* if(ch.length()>10)
+     {
+     ch="";
+     }
+*/
+    }
+
