@@ -600,10 +600,10 @@ void employee::on_pushButton_export_clicked()
 
 
 //messagerie (chat Box)
-/*void employee::on_pushButton_send_clicked()
+void employee::on_pushButton_send_clicked()
 {
     QString MSG=ui->lineEdit_send->text();
-   // message m(MSG);
+    message m(MSG);
     bool test5=m.sendmsg();
       if(test5)
       {
@@ -611,4 +611,4 @@ void employee::on_pushButton_export_clicked()
       ui->lineEdit_send->clear();
       ui->lineEdit_send->setText("from 211JMT:");
       }
-}*/
+}

@@ -24,6 +24,7 @@ SOURCES += \
     hafla.cpp \
     main.cpp \
     mainwindow.cpp \
+    message.cpp \
     supplier.cpp
 
 HEADERS += \
@@ -33,6 +34,7 @@ HEADERS += \
     employee.h \
     hafla.h \
     mainwindow.h \
+    message.h \
     supplier.h
 
 FORMS += \

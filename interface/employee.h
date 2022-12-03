@@ -25,6 +25,7 @@
 #include <QtCharts/QCategoryAxis>
 #include <QtCharts/QPieSeries>
 #include <QtCharts/QPieSlice>
+#include "message.h"
 
 class employe
 {
@@ -85,7 +86,7 @@ private slots:
     void on_pushButton_search_clicked();
     void on_pushButton_sort_clicked();
     void on_pushButton_export_clicked();
-    //void on_pushButton_send_clicked();
+    void on_pushButton_send_clicked();
 
 private:
     Ui::employee *ui;
