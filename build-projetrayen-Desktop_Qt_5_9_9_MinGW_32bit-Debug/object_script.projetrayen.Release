@@ -8,14 +8,16 @@ INPUT(
 ./release\main.o
 ./release\mainwindow.o
 ./release\message.o
+./release\provider.o
+./release\qcustomplot.o
 ./release\smtp.o
 ./release\supplier.o
-./release\qrc_image.o
 ./release\moc_client.o
 ./release\moc_employee.o
 ./release\moc_exportexcelobject.o
 ./release\moc_hafla.o
 ./release\moc_mainwindow.o
+./release\moc_qcustomplot.o
 ./release\moc_smtp.o
 ./release\moc_supplier.o
 );

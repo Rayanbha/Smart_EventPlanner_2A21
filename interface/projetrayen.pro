@@ -1,6 +1,6 @@
 QT       += core gui charts network multimedia multimediawidgets charts printsupport widgets axcontainer
 QT       += sql
-QT       += serialport
+QT       += serialport printsupport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -26,6 +26,8 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     message.cpp \
+    provider.cpp \
+    qcustomplot.cpp \
     smtp.cpp \
     supplier.cpp
 
@@ -38,6 +40,8 @@ HEADERS += \
     hafla.h \
     mainwindow.h \
     message.h \
+    provider.h \
+    qcustomplot.h \
     smtp.h \
     supplier.h
 
@@ -54,7 +58,6 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-RESOURCES += \
-    image.qrc
+RESOURCES +=
 
 
