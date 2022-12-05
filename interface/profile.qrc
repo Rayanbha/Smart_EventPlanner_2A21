@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>img/b2ap3_large_totw_network_profile_400.jpg</file>
+        <file>img/icône-de-vecteur-profils-d-isolement-sur-le-fond-transparent-profil-127336482.jpg</file>
+        <file>img/cool-background.png</file>
+        <file>img/Untitled-1.png</file>
+    </qresource>
+</RCC>

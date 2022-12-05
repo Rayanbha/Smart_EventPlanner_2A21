@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>D:/Work/project QT/image/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner.jpg</file>
+        <file>D:/Work/project QT/image/blue_smooth_wavy_background.jpg</file>
+        <file>D:/Work/project QT/image/cool-background.png</file>
+        <file>D:/Work/project QT/image/logo.png</file>
+        <file>D:/Work/project QT/image/vintage-grunge-blue-concrete-texture-wall-background-with-vignette (1).jpg</file>
+    </qresource>
+</RCC>
